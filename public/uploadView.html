@@ -1,0 +1,208 @@
+<html> 
+    <head>
+         <title>Save and load images</title>
+         <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+         <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+         <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+         <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-storage.js"></script>
+         <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+         <script src="uploadView.js"></script>
+         <style>
+           
+          *,
+          *::before,
+          *::after {
+            box-sizing: border-box;
+          }
+  
+          :root {
+            --input-border: #8b8a8b;
+            --input-focus-h: 245;
+            --input-focus-s: 100%;
+            --input-focus-l: 42%;
+          }
+  
+          .input {
+            font-size: 16px;
+            
+            font-size: Max(16px, 1em);
+            font-family: inherit;
+            padding: 0.2em 0.5em;
+            background-color: #fff;
+            border: 2px solid var(--input-border);
+            border-radius: 4.5px;
+            transition: 180ms box-shadow ease-in-out;
+          }
+  
+          .input:focus {
+            border-color: hsl(
+              var(--input-focus-h),
+              var(--input-focus-s),
+              var(--input-focus-l)
+            );
+            box-shadow: 0 0 0 3px
+              hsla(
+                var(--input-focus-h),
+                var(--input-focus-s),
+                calc(var(--input-focus-l) + 40%),
+                0.8
+              );
+            outline: 3px solid transparent;
+          }
+  
+          .input:not(textarea) {
+            line-height: 1;
+            height: 2.0rem;
+          }
+  
+          input[type="file"] {
+            font-size: 0.9em;
+            padding-top: 0.35rem;
+          }
+  
+          textarea.input {
+            resize: vertical;
+          }
+  
+          .input[readonly] {
+            border-style: dotted;
+            cursor: not-allowed;
+            color: #777;
+          }
+  
+          .input[disabled] {
+            --input-border: #ccc;
+          
+            background-color: #eee;
+            cursor: not-allowed;
+          }
+  
+          label {
+            font-size: 1.125rem;
+            font-weight: 500;
+            line-height: 1;
+          }
+  
+          .input + label {
+            margin-top: 2rem;
+          }
+  
+          body {
+          min-height: 100vh;
+          display: grid;
+          place-content: center;
+          grid-gap: 0.5rem;
+          font-family: "Baloo 2", sans-serif;
+          background-color:cornsilk;
+          padding: 0rem;
+          }
+/* -------------------------------------NAV BAR ------------- */
+
+          .a{
+		width: 100vw;
+	}
+	#navbar_top{
+		width: 100vw;
+	}
+	.slide{
+       top: 0vh;
+     }
+     .carousel-inner{
+       width: 100vw;
+       height: 500px;
+     }
+	 .navbar1 {
+  /* overflow: hidden; */
+  background-color:#333;  
+  top: 0;
+  position: fixed;
+  height: 50px;
+  width: 100%;
+}
+
+.navbar1 a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar1 a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.navbar1 a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.navbar1 .icon {
+  display: none;
+}
+h2{
+	color: darkmagenta;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+      </style>
+       
+    </head>
+    <body>
+      <h2 style="color: cornflowerblue;">Register Your House here!</h2>
+      <form >
+          <label for="text-input1">Name</label><br>
+          <input class="input" id="name1" type="text" />
+          <br>
+          <label for="text-input2">Cost</label><br>
+          <input class="input" id="rate" type="text" />
+          <br>
+          <label for="text-input3">Availability</label><br>
+          <input class="input" id="avl" type="text" />
+          <br>
+          <label for="text-input4">Area(sqft)</label><br>
+          <input class="input" id="sqfeet" type="text" />
+          <br>
+          <label for="text-input5">Size(BHK)</label><br>
+          <input class="input" id="size" type="text" />
+          <br>
+         
+          <br>
+          <select  name="location1" id="lcn">
+              <option value="null">ALL</option>
+              <option value="ramnagar">RAMNAGAR</option>
+              <option value="pattana">PATTANA</option>
+              <option value="nagarabavi">NAGARABAVI</option>
+              <option value="majestic">MAJESTIC</option>
+              <option value="hegdenagar">HEGDE NAGAR</option>
+          </select>
+          <br>
+          <input type="file"  id="image" >
+           <a href="#" onclick="upload()">
+            
+              UPLOAD
+           </a>
+  
+          <br>
+  
+      </form>
+
+
+      
+      <div class="navbar1" id="myNavbar">
+        <a href="sample.html" class="active">HOME</a>
+        <!-- <a href="uploadView.html">ADD NEW ONE</a> -->
+        <a href="#cnt">CONTACT</a>
+        <a href="about.html">ABOUT</a>
+        <!-- <a href="index.html" style="float:right">Sign Out</a> -->
+        <!-- <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction1()">&#9776;</a> -->
+        </div>
+    </body>
+</html>
+
+
+
+
+

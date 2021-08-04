@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Banglore Home Price Prediction</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+	<link rel="stylesheet" href="app.css">
+	<style>
+.input [type="button"]{
+	color: brown;
+	display: flexbox;
+	border: 2px;
+	margin-left: 0px;
+}
+
+
+	</style>
+</head>
+<body>
+<div class="img"></div>
+<form class="form">
+	<div class="back">
+		<a href="sample.html">HOME</a>
+	</div>
+	<h2>Area (Square Feet)</h2>
+    <input class="area"  type="text" id="uiSqft" class="floatLabel" name="Squareft" placeholder="Enter the Sqft Area">
+	<h2>BHK</h2>
+	
+        <input class="bhk" type="text" id="uiBHK" class="floatLabel" name="BHK" placeholder="Enter No of BHK">
+	<h2>Bathrooms</h2>    
+	    <input class="bath" type="text" id="uibath" class="floatLabel" name="bath" placeholder="Enter No of Bathrooms">
+	</form>
+<form class="form">
+
+	</div>
+		<h2>Location</h2>
+	<div>
+  <select class="location" name="" id="uiLocations">
+    <option value="" disabled="disabled" selected="selected">Choose a Location</option>
+
+  </select>
+</div>
+	<button class="submit" onclick="onClickedEstimatePrice()" type="button">Estimate Price</button>
+	<div id="uiEstimatedPrice" class="result">	<h2></h2> </div>
+</form>
+
+	 
+
+
+</body>
+</html>

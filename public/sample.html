@@ -1,0 +1,292 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="keywords" content="htmlcss bootstrap menu, fixed, after scrolling page, navbar, menu CSS examples" />
+<meta name="description" content="Bootstrap 5 fixed navbar on scroll page examples, Bootstrap 5" />  
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+  <script src="sample.js"></script>
+<title>PROPERTY 2021!</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"crossorigin="anonymous"></script>
+<style>
+	.a{
+		width: 100vw;
+	}
+	#navbar_top{
+		width: 100vw;
+	}
+	.slide{
+       top: 0vh;
+     }
+     .carousel-inner{
+       /* background-color: #04AA6D;
+       background-image:url(../IMAGES/myhome.jpg); */
+       width: 100vw;
+       height: 80vh;
+     }
+	 .navbar1 {
+  overflow: hidden;
+  background-color:#333;  
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navbar1 a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar1 a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.navbar1 a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.navbar1 .icon {
+  display: none;
+}
+h2{
+	color: darkmagenta;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.dropbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: burlywood;
+  color: white;
+}
+
+#myInput {
+  box-sizing: border-box;
+  background-image: url('searchicon.png');
+  background-position: 14px 12px;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  padding: 14px 20px 12px 45px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+}
+#cnt{
+  background-color: #333;
+  color: wheat;
+  border-color: white;
+  border-radius: 2px;
+}
+#myInput:focus {outline: 3px solid #ddd;}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  padding-right: 6vw;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f6f6f6;
+  min-width: 230px;
+  overflow: auto;
+  border: 1px solid #ddd;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+@media screen and (max-width: 600px) {
+  .navbar1 a:not(:first-child) {display: none;}
+  .navbar1 a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .navbar1.responsive .icon {
+    position: absolute;
+    right: 0;
+    bottom:0;
+  }
+  .navbar1.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  /* .carousel slide audotage{
+    background-image: url(../IMAGES/myhome.jpg) cover/center no-repeat;
+  } */
+
+}
+</style>
+<script type="text/javascript">
+	document.addEventListener("DOMContentLoaded", function(){
+		
+		window.addEventListener('scroll', function() {
+	       
+			if (window.scrollY > 50) {
+				document.getElementById('navbar_top').classList.add('fixed-top');
+				// add padding top to show content behind navbar
+				navbar_height = document.querySelector('.navbar').offsetHeight;
+				document.body.style.paddingTop = navbar_height + 'px';
+			} else {
+			 	document.getElementById('navbar_top').classList.remove('fixed-top');
+				 // remove padding top from body
+				document.body.style.paddingTop = '0';
+			} 
+		});
+	}); 
+	// DOMContentLoaded  end
+
+	
+</script>
+
+</head>
+<body>
+
+<div class="a bg-warning py-3">
+	<div class="container">
+		mysuru
+	</div>
+</div>
+
+<!-- ============= COMPONENT ============== -->
+<nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark bg-primary">
+ <div class="container">
+ 	 <a class="navbar-brand" href="#">  WELCOME TO PROPERTY 2021!!</a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav"  aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  <div class="collapse navbar-collapse" id="main_nav">
+	
+      
+	<ul class="navbar-nav ms-auto">
+	
+
+		<li class="nav-item dropdown">
+
+			 <div class="dropdown">
+				
+        <a href="app.html" style="background-color: aqua;">Estimate Cost of House</a>
+
+			  </div>
+          
+		</li>
+	</ul>
+
+  </div> <!-- navbar-collapse.// -->
+ </div> <!-- container-fluid.// -->
+</nav>
+
+
+
+
+<div class= >
+
+<div class="">
+	<div id="carouselExampleControls" class="carousel slide audotage" data-bs-ride="carousel">
+		<div class="carousel-inner">
+		 
+			<img src="../IMAGES/myhome.jpg" class="d-block w-100 A" alt="...">
+		 
+		</div>
+	
+	  </div>
+</div> 
+<div class="container">
+<section>
+	<br/>
+
+	  <br/>
+	  <br/>
+
+</section>
+
+<section>
+  <h2>We are Excited!!! <button class="btn btn-block btn-info" onclick="refresh()">refresh</button></h2>
+	  <div class="recommendations row" id="recommendation">
+          
+	</div>
+	<br/>
+	<br/>
+
+</section>
+
+</div>
+
+
+</div>
+
+<div class="navbar1" id="myNavbar">
+	<a href="#home" class="active">HOME</a>
+	<a href="uploadView.html">ADD NEW ONE</a>
+	<a href="#cnt">CONTACT</a>
+	<a href="about.html">ABOUT</a>
+  <a href="index.html" style="float:right">Sign Out</a>
+	<a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction1()">&#9776;</a>
+  </div>
+  
+  <script>
+  function myFunction1() {
+	var x = document.getElementById("myNavbar");
+	if (x.className === "navbar1") {
+	  x.className += " responsive";
+	} else {
+	  x.className = "navbar1";
+	}
+  }
+  function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function filterFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("myDropdown");
+  a = div.getElementsByTagName("a");
+  for (i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
+  </script>
+</body>
+</html>
